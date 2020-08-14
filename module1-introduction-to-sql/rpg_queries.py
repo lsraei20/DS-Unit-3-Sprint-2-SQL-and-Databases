@@ -52,6 +52,7 @@ curs.execute('SELECT AVG(num_of_items) FROM (SELECT name, num_of_items FROM char
              '1) AS ic ON  cc.character_id = ic.character_id)')
 print('Each character has an average of', curs.fetchall(), 'items\n')
 
+
 print('8-) On average, how many Weapons does each character have?\n')
 curs.execute('SELECT AVG(num_of_weapons) FROM (SELECT name, COALESCE(num_of_weapons, 0) as num_of_weapons FROM ('
              'SELECT name, num_of_weapons FROM (SELECT * FROM charactercreator_character AS cc LEFT JOIN (SELECT '
